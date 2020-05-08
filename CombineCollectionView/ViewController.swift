@@ -25,12 +25,10 @@ class ViewController: UIViewController {
     
     @IBAction func decreaseButtonPressed(_ sender: Any) {
         // send minus 1 event
-        countLabelSubject.send(countLabelSubject.value - 1)
     }
     
     @IBAction func increaseButtonPressed(_ sender: Any) {
         // send plus 1 event
-        countLabelSubject.send(countLabelSubject.value + 1)
     }
     
     @IBAction func sendNotificationButtonPressed(_ sender: Any) {
@@ -48,9 +46,6 @@ class ViewController: UIViewController {
     func testAssign() {
         
         // assign countLabelSubject to countLabel
-        countLabelSubject.map { String($0) }
-            .assign(to: \.text, on: countLabel)
-            .store(in: &cancellables)
         
     }
     
@@ -62,11 +57,7 @@ class ViewController: UIViewController {
          }
         
         // combine 的寫法
-//        notificationCenter.publisher(for: notificationName)
-//            .sink(receiveValue: { _ in
-//                self.performSegue(withIdentifier: "toMoviePage", sender: nil)
-//            })
-//            .store(in: &cancellables)
+
     }
     
     func testThemimgSystem() {

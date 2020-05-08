@@ -53,15 +53,10 @@ class MovieViewController: UIViewController {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
 
                 cell.title.text = item.name
-                cell.cancellable = NetworkManager.fetchImage(url: item.artworkUrl100)
-                    .receive(on: DispatchQueue.main)
-                    .sink(receiveCompletion: { completion in // handle errors if needed
-                    },
-                          receiveValue: { image in
-                            if let currentIndexPath = collectionView.indexPath(for: cell), currentIndexPath == indexPath {
-                                cell.imageView.image = image
-                            }
-                    })
+                
+                // load image here
+                
+
                 return cell
         }
     }
